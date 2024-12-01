@@ -8,14 +8,15 @@ package proyectoeda;
  *
  * @author usuario
  */
-public class NodoGrafo {
-    Object dato;
-    ListaDeAdyacencia lista;
-    NodoGrafo siguiente;
-    
-    public NodoGrafo(Object x){
-        dato = x;
-        lista = new ListaDeAdyacencia();
+public class Arista {
+
+    Object destino;
+    float peso;
+    Arista siguiente;
+
+    public Arista(Object d, float p) {
+        destino = d;
+        peso = p;
         siguiente = null;
     }
 }
