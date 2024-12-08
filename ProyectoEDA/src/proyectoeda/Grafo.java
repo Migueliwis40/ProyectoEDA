@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyectoeda;
 
-/**
- *
- * @author usuario
- */
 public class Grafo {
 
-    private NodoGrafo primero;
-    private NodoGrafo ultimo;
+    private NodoPrisionero primero;
+    private NodoPrisionero ultimo;
 
     public Grafo() {
         primero = null;
@@ -25,9 +17,9 @@ public class Grafo {
     public boolean existeVertice(Object dato){
         boolean existe = false;
         if(!grafoVacio()){
-            NodoGrafo temporal = primero;
+            NodoPrisionero temporal = primero;
             while(temporal!=null && !existe){
-                if(temporal.dato.toString().equals(dato.toString())){
+                if(temporal.nombrePrisionero.toString().equals(dato.toString())){
                     existe = true;
                 }
                 temporal = temporal.siguiente;
@@ -38,8 +30,8 @@ public class Grafo {
     
     public void NuevaArista(Object origen, Object destino, float peso){
         if(existeVertice(origen) && existeVertice(destino)){
-            NodoGrafo posicion = primero;
-            while(!posicion.dato.equals(origen.toString())){
+            NodoPrisionero posicion = primero;
+            while(!posicion.nombrePrisionero.equals(origen.toString())){
                 posicion = posicion.siguiente;
             }
             posicion.lista.nuevaAdyacencia(destino, peso);
@@ -49,9 +41,9 @@ public class Grafo {
     @Override
     public String toString(){ //para imprimir
         String cadena = "";
-        NodoGrafo temporal = primero;
+        NodoPrisionero temporal = primero;
         while (temporal != null){
-            cadena = cadena + temporal.dato.toString()+" -> " + temporal.lista.toString()+"\n";
+            cadena = cadena + temporal.nombrePrisionero.toString()+" -> " + temporal.lista.toString()+"\n";
             temporal = temporal.siguiente;
         }
         return cadena;

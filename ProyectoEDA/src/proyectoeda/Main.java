@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ProyectoEDA {
+public class Main {
     public static void main(String[] args) {
         iniciarNodosPrisioneros();
     }
@@ -17,6 +17,7 @@ public class ProyectoEDA {
             while (line != null) {
                 String[] vec = line.split(", ");
                 NodoPrisionero nodo = new NodoPrisionero(vec[0], Puntaje.CalcPuntaje(vec[1], vec[2], vec[3]));
+                
                 //PRUEBA
                 System.out.println(nodo.nombrePrisionero + " " + nodo.peligrosidad);
                 line = br.readLine();
