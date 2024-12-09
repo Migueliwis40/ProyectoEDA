@@ -16,7 +16,7 @@ public class Main {
         try {
             BufferedReader br = new BufferedReader(new FileReader("txtPrisioneros"));
             String line = br.readLine();
-            
+
             while (line != null) {
                 String[] vec = line.split(", ");
                 NodoPrisionero nodo = new NodoPrisionero(vec[0], Puntaje.CalcPuntaje(vec[1], vec[2], vec[3]));
@@ -41,6 +41,7 @@ public class Main {
                         int diferencia = Math.abs(nodo1.peligrosidad - nodo2.peligrosidad);
                         if (diferencia <= 20) {
                             grafo.NuevaArista(nodo1.nombrePrisionero, nodo2.nombrePrisionero, diferencia);
+                            grafo.NuevaArista(nodo2.nombrePrisionero, nodo1.nombrePrisionero, diferencia);
                         }
                         nodo2 = nodo2.siguiente;
                     }
@@ -50,7 +51,7 @@ public class Main {
             //imprimir grafo
             NodoPrisionero temp = grafo.primero;
             while (temp != null) {
-                System.out.println(temp);             
+                System.out.println(temp);
                 temp = temp.siguiente;
             }
         } catch (IOException e) {

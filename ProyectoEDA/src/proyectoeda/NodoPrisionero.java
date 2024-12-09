@@ -16,6 +16,6 @@ public class NodoPrisionero {
 
     @Override
     public String toString() {
-        return nombrePrisionero + " -> " + lista.toString();
+        return "("  + peligrosidad + ") " +nombrePrisionero + " -> " + lista.toString();
     }
 }
