@@ -1,2 +1,0 @@
-nombrePrisionero(String), crimen(StringLista), conflictividad(si/no), estadoPsicologico(bueno/regular/malo)
-Juan, homicidio, si, regular
