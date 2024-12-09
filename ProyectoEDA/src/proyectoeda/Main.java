@@ -7,7 +7,8 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
-        iniciarNodosPrisioneros(); // Constructor main asaasa
+        iniciarNodosPrisioneros();
+        System.out.print(""); //Prueba
     }
 
     public static void iniciarNodosPrisioneros() {
