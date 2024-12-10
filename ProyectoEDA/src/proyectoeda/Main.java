@@ -30,7 +30,7 @@ public class Main {
                         grafo.ultimo = nodo;
                     }
                     //PRUEBA
-                    System.out.println(nodo.nombrePrisionero + " " + nodo.peligrosidad);
+                    //System.out.println(nodo.nombrePrisionero + " " + nodo.peligrosidad);
                     line = br.readLine();
 
                 }
