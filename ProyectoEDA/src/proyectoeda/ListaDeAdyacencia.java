@@ -15,14 +15,29 @@ public class ListaDeAdyacencia {
     }
 
     public void nuevaAdyacencia(Object destino, float peso) {
+        // Crea una nueva arista si aun no existe
         if (!busqueda(destino)) {
             Arista nodo = new Arista(destino, peso);
             inserta(nodo, destino);
         }
     }
 
+    public boolean busqueda(Object dato) {
+        // Verifica ssi existe una arista
+        boolean encontrado = false;
+        Arista recorre = primero;
+        while (recorre != null && !dato.toString().equals(recorre.destino.toString())) {
+            recorre = recorre.siguiente;
+        }
+        if (recorre != null) {
+            encontrado = true;
+        }
+        return encontrado;
+    }
+
     public void inserta(Arista nodo, Object destino) {
-            if (listaVacia()) {
+        // Inserta la arista a la lista enlazada 
+        if (listaVacia()) {
             primero = nodo;
             ultimo = nodo;
         } else {
@@ -45,25 +60,11 @@ public class ListaDeAdyacencia {
         }
     }
 
-    public boolean busqueda(Object dato) {
-        Arista actual;
-        boolean encontrado;
-        encontrado = false;
-        actual = primero;
-        while (actual != null && !dato.toString().equals(actual.destino.toString())) {
-            actual = actual.siguiente;
-        }
-        if (actual != null) {
-            encontrado = true;
-        }
-        return encontrado;
-    }
-    
-    public String toString(){
+    public String toString() {
         String cadena = "";
         Arista temporal = primero;
-        while (temporal != null){
-            cadena = cadena + temporal.destino.toString()+ " ; ";
+        while (temporal != null) {
+            cadena = cadena + temporal.destino.toString() + " ; ";
             temporal = temporal.siguiente;
         }
         return cadena;

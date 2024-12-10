@@ -6,12 +6,14 @@ public class NodoPrisionero {
     int peligrosidad;
     ListaDeAdyacencia lista;
     NodoPrisionero siguiente;
+    boolean visitado;
 
     public NodoPrisionero(String nombre, int p) {
         this.nombrePrisionero = nombre;
         this.peligrosidad = p;
-        lista = new ListaDeAdyacencia();
-        siguiente = null;
+        this.lista = new ListaDeAdyacencia();
+        this.siguiente = null;
+        this.visitado = false;
     }
 
     @Override
