@@ -65,6 +65,7 @@ public class Main {
                         int diferencia = Math.abs(nodo1.peligrosidad - nodo2.peligrosidad);
                         if (diferencia <= 5) {
                             nodo1.lista.nuevaAdyacencia(nodo2.nombrePrisionero, diferencia);
+                            nodo2.lista.nuevaAdyacencia(nodo1.nombrePrisionero, diferencia);
                         }
                     }
                 }
